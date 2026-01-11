@@ -1,3 +1,11 @@
+# What is this?
+
+This is a fork of Cockatrice featuring a customized client with additional quality of life features.
+The custom client is intended to be compatible with the default Cockatrice server so you can still play with others online without them needing to modify their server or client.
+
+### What's new?
+- 🏞️ Land fetching from library (Right click -> Fetch land)
+
 <p align='center'><img src=https://cloud.githubusercontent.com/assets/9874850/7516775/b00b8e36-f4d1-11e4-8da4-3df294d01f86.png></p>
 
 ---
@@ -19,7 +27,6 @@
 <b>To get support, or suggest changes to the app &#8674; [file an issue](https://github.com/Cockatrice/Cockatrice/issues) ([How?](https://github.com/Cockatrice/Cockatrice/wiki/How-to-Create-a-GitHub-Ticket-Regarding-Cockatrice))</b>
 <b>To help with development &#8674; learn [how to contribute](#contribute-)</b>
 </pre><p><br>
-
 
 # Cockatrice
 
