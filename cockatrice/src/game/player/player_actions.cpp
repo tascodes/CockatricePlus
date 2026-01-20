@@ -13,6 +13,7 @@
 #include "../zones/view_zone_widget.h"
 #include "card_menu_action_type.h"
 
+#include <QInputDialog>
 #include <QLineEdit>
 
 #include <libcockatrice/card/database/card_database_manager.h>
@@ -514,6 +515,30 @@ void PlayerActions::actMoveTopCardsUntil()
         movingCardsUntil = true;
         actMoveTopCardToPlay();
     }
+}
+
+void PlayerActions::actCascade()
+{
+    stopMoveTopCardsUntil();
+
+    if (player->getDeckZone()->getCards().empty()) {
+        return;
+    }
+
+    bool ok;
+    int manaValue = QInputDialog::getInt(player->getGame()->getTab(), tr("Cascade"),
+                                         tr("Mana value (X):"), 1, 0, 100, 1, &ok);
+    if (!ok) {
+        return;
+    }
+
+    // Build the cascade filter: "mv<=X -t:land"
+    QString filterExpr = QString("mv<=%1 -t:land").arg(manaValue);
+
+    movingCardsUntilFilter = FilterString(filterExpr);
+    movingCardsUntilCounter = 1; // Stop at first match
+    movingCardsUntil = true;
+    actMoveTopCardToPlay();
 }
 
 void PlayerActions::moveOneCardUntil(CardItem *card)

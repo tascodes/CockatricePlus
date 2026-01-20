@@ -100,6 +100,7 @@ public slots:
     void actMoveTopCardsToGrave();
     void actMoveTopCardsToExile();
     void actMoveTopCardsUntil();
+    void actCascade();
     void actMoveTopCardToBottom();
     void actDrawBottomCard();
     void actDrawBottomCards();

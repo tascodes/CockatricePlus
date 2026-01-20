@@ -66,6 +66,7 @@ LibraryMenu::LibraryMenu(Player *_player, QWidget *parent) : TearOffMenu(parent)
     topLibraryMenu->addAction(aMoveTopCardToExile);
     topLibraryMenu->addAction(aMoveTopCardsToExile);
     topLibraryMenu->addAction(aMoveTopCardsUntil);
+    topLibraryMenu->addAction(aCascade);
     topLibraryMenu->addSeparator();
     topLibraryMenu->addAction(aShuffleTopCards);
 
@@ -152,6 +153,8 @@ void LibraryMenu::createMoveActions()
         connect(aMoveTopCardsToExile, &QAction::triggered, playerActions, &PlayerActions::actMoveTopCardsToExile);
         aMoveTopCardsUntil = new QAction(this);
         connect(aMoveTopCardsUntil, &QAction::triggered, playerActions, &PlayerActions::actMoveTopCardsUntil);
+        aCascade = new QAction(this);
+        connect(aCascade, &QAction::triggered, playerActions, &PlayerActions::actCascade);
         aMoveTopCardToBottom = new QAction(this);
         connect(aMoveTopCardToBottom, &QAction::triggered, playerActions, &PlayerActions::actMoveTopCardToBottom);
 
@@ -232,6 +235,7 @@ void LibraryMenu::retranslateUi()
         aMoveTopCardsToGraveyard->setText(tr("Move top cards to &graveyard..."));
         aMoveTopCardsToExile->setText(tr("Move top cards to &exile..."));
         aMoveTopCardsUntil->setText(tr("Put top cards on stack &until..."));
+        aCascade->setText(tr("Cascade X..."));
         aShuffleTopCards->setText(tr("Shuffle top cards..."));
 
         aDrawBottomCard->setText(tr("&Draw bottom card"));

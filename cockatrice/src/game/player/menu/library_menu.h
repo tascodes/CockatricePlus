@@ -96,6 +96,7 @@ public:
     QAction *aMoveTopCardsToGraveyard = nullptr;
     QAction *aMoveTopCardsToExile = nullptr;
     QAction *aMoveTopCardsUntil = nullptr;
+    QAction *aCascade = nullptr;
     QAction *aShuffleTopCards = nullptr;
 
     QAction *aDrawBottomCard = nullptr;
